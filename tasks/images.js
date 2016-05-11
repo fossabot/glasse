@@ -9,6 +9,6 @@ module.exports = (gulp, projectArguments) => {
   let config = configuration.merge(configuration.default(), projectArguments.config);
 
   return gulp.src(config.images.src)
-    .pipe(tasks.images(config.images || {}, plugins, config))
+    .pipe(tasks['images'](config['images'], plugins, config))
     .pipe(gulp.dest(distDir(config, 'images')));
 };
