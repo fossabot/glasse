@@ -17,7 +17,13 @@ module.exports = (gulp, projectArguments) => {
   }
 
   let buildFile = function(file) {
-    let fileStream = gulp.src(config['styles'].src)
+    let src = config.styles.src;
+
+    if(config.styles.concat && config.styles.concat.src) {
+      src = config.styles.concat.src;
+    }
+
+    let fileStream = gulp.src(src)
       .pipe(tasks['styles'](file.settings, plugins, config))
       .pipe(concatIntoFile(file, plugins, config));
 
