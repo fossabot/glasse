@@ -11,8 +11,15 @@ module.exports = (gulp, projectArguments) => {
 
   let merged = merge();
   let toConcat = config['scripts'].concat;
+
   let buildFile = function(file) {
-    let fileStream = gulp.src(config['scripts'].src)
+    let src = config.scripts.src;
+
+    if(file.src) {
+      src = file.src;
+    }
+
+    let fileStream = gulp.src(src)
       .pipe(tasks['scripts'](file.settings, plugins, config))
       .pipe(concatIntoFile(file, plugins, config));
 

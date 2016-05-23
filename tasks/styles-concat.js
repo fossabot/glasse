@@ -12,10 +12,6 @@ module.exports = (gulp, projectArguments) => {
   let merged = merge();
   let toConcat = config['styles'].concat;
 
-  if(!toConcat || !toConcat.length) {
-    return;
-  }
-
   let buildFile = function(file) {
     let src = config.styles.src;
 
