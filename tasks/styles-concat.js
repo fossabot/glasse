@@ -19,8 +19,8 @@ module.exports = (gulp, projectArguments) => {
   let buildFile = function(file) {
     let src = config.styles.src;
 
-    if(config.styles.concat && config.styles.concat.src) {
-      src = config.styles.concat.src;
+    if(file.src) {
+      src = file.src;
     }
 
     let fileStream = gulp.src(src)
@@ -29,6 +29,10 @@ module.exports = (gulp, projectArguments) => {
 
     merged.add(fileStream);
   };
+
+  if(!toConcat.length) {
+    return merged;
+  }
 
   toConcat.forEach(buildFile);
   return merged;
