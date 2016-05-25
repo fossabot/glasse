@@ -7,8 +7,8 @@ const tasks = require('../lib/gulp/tasks');
 
 module.exports = (gulp, projectArguments) => {
   let config = configuration.merge(configuration.default(), projectArguments.config);
-  let src = config['scripts'].src;
+  let src = config['scripts-lint'].src;
 
   return gulp.src(src)
-    .pipe(tasks['scripts-lint'](config['scripts'].settings, plugins, config));
+    .pipe(tasks['scripts-lint'](config['scripts-lint'].settings, plugins, config));
 };
