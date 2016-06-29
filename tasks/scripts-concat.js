@@ -1,5 +1,6 @@
 'use strict';
 
+const _ = require('lodash');
 const concatIntoFile = require('../lib/gulp/concat-into-file.js');
 const configuration = require('../lib/gulp/configuration');
 const merge = require('merge-stream');
@@ -14,12 +15,13 @@ module.exports = (gulp, projectArguments) => {
 
   let buildFile = function(file) {
     let src = config.scripts.src;
+    let filter = file.filter || undefined;
+    let union = file.union || undefined;
 
-    if(file.src) {
-      src = file.src;
-    }
+    src = _.union(src, union);
 
     let fileStream = gulp.src(src)
+      .pipe(plugins.filter(filter))
       .pipe(tasks['scripts'](file.settings, plugins, config))
       .pipe(concatIntoFile(file, plugins, config));
 
