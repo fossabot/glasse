@@ -15,7 +15,7 @@ module.exports = (gulp, projectArguments) => {
 
   let buildFile = function(file) {
     let src = config.styles.src;
-    let filter = file.filter || undefined;
+    let filter = file.filter || [];
     let union = file.union || undefined;
 
     src = _.union(src, union);
