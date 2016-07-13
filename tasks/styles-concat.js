@@ -33,7 +33,7 @@ module.exports = (gulp, projectArguments) => {
   });
 
   if(!toConcat.length) {
-    return merged;
+    return eventStream.merge();
   }
 
   return eventStream.merge(concatStreams);
