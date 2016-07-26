@@ -51,7 +51,7 @@ module.exports = {
   styles: {
     dist_dir: 'styles/', /* relative to scope dist_dir */
     src: [
-      './assets/styles/*.scss',
+      './assets/styles/*.styl',
     ],
     concat: [
       {
