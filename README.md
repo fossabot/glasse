@@ -33,7 +33,7 @@ const path = require('path');
 requireTasks({
   arguments: [
     {
-      config: require('./gulp-config'),
+      config: require('./gulp-config'), // see section for gulp-config.js
     }
   ],
   passCallback: false,
@@ -45,6 +45,8 @@ requireTasks({
 ### gulp-config.js
 
 ```js
+'use strict';
+
 module.exports = {
   dist_dir: './dist/',
   
@@ -93,6 +95,8 @@ module.exports = {
 In addition it's possible to overwrite the asset-pipeline internals:
 
 ```js
+'use strict';
+
 module.exports = {
   styles: {
     settings: {
