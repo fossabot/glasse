@@ -1,4 +1,6 @@
 # Glasse
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faboutsource-test%2Fglasse.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faboutsource-test%2Fglasse?ref=badge_shield)
+
 
 Glasse is an installable gulp-asset-pipeline, which provides you some basic
 tasks.
@@ -112,3 +114,7 @@ module.exports = {
   },
 };
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faboutsource-test%2Fglasse.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Faboutsource-test%2Fglasse?ref=badge_large)
